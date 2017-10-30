@@ -4,8 +4,8 @@ class Atm
     account.balance += amount
   end
 
-  def withdrawal
-
+  def withdraw(account, amount)
+    account.balance -= amount
   end
 
 end
