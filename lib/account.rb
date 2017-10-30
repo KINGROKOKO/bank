@@ -3,7 +3,7 @@ require_relative 'atm'
 
 class Account
   attr_reader :name
-  attr_accessor :balance,  :statement
+  attr_accessor :balance, :statement
 
   def initialize(name)
     @name = name
@@ -12,8 +12,7 @@ class Account
   end
 
   def print_statement
-    puts "date || credit || debit || balance"
-    @statement.each{|n| puts "#{n.date}" + " || " + "#{'%.2f' % n.credit if n.credit != nil}" + " || " + "#{'%.2f' % n.debit if n.debit != nil}" + " || " + "#{'%.2f' % n.balance}\n"}
+    puts 'date || credit || debit || balance'
+    @statement.reverse.each { |n| puts n.date.to_s + ' || ' + (format('%.2f', n.credit) unless n.credit.nil?).to_s + ' || ' + (format('%.2f', n.debit) unless n.debit.nil?).to_s + ' || ' + "#{format('%.2f', n.balance)}\n" }
   end
-
 end

@@ -18,11 +18,11 @@ describe Atm do
     expect(account.balance).to eq(0)
   end
 
-  it 'confirms customer can print statement of transactions' do
+  it 'confirms customer can print statement of transactions and they are in reverse order' do
     account = Account.new('thomas')
     atm = Atm.new(account)
     atm.deposit(5)
     atm.withdraw(5)
-    expect(atm.print_statement).to eq(account.statement)
+    expect(atm.print_statement.reverse).to eq(account.statement)
   end
 end

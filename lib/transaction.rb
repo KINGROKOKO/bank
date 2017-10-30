@@ -7,7 +7,7 @@ class Transaction
 
   def initialize(account)
     @account = account
-    @date = Time.now.strftime("%d/%m/%Y")
+    @date = Time.now.strftime('%d/%m/%Y')
     @credit = nil
     @debit = nil
     @balance = nil

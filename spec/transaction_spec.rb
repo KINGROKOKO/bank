@@ -30,6 +30,6 @@ describe Transaction do
     customer = Account.new('thomas')
     atm = Atm.new(customer)
     atm.deposit(5)
-    expect(customer.statement[0].date).to eq(Time.now.strftime("%d/%m/%Y"))
+    expect(customer.statement[0].date).to eq(Time.now.strftime('%d/%m/%Y'))
   end
 end
