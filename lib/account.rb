@@ -12,7 +12,8 @@ class Account
   end
 
   def print_statement
-    @statement.each{|n| puts n.date, n.credit, n.debit, n.balance}
+    puts "date || credit || debit || balance"
+    @statement.each{|n| puts "#{n.date}" + " || " + "#{'%.2f' % n.credit if n.credit != nil}" + " || " + "#{'%.2f' % n.debit if n.debit != nil}" + " || " + "#{'%.2f' % n.balance}\n"}
   end
 
 end

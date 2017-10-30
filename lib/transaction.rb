@@ -12,5 +12,4 @@ class Transaction
     @debit = nil
     @balance = nil
   end
-
 end

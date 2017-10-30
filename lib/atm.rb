@@ -26,14 +26,12 @@ class Atm
 
   def transaction_update
     @transaction.balance = @account.balance
-    @transaction.date =
-    @transaction.credit = '||' if @transaction.credit == nil
-    @transaction.debit = '||' if @transaction.debit == nil
+    @transaction.date = Time.now.strftime("%d/%m/%Y")
     @account.statement << @transaction
   end
 
   def print_statement
-    @account.statement
+    @account.print_statement
   end
 
 end
