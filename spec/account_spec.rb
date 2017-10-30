@@ -8,4 +8,9 @@ describe Account do
     expect(customer.name).to eq('thomas')
     expect(customer.balance).to eq(0)
   end
+
+  it 'confirms statement is generated with new account' do
+    customer = Account.new('thomas')
+    expect(customer.statement).to eq([])
+  end
 end
